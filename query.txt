@@ -1,0 +1,2 @@
+SELECT LOWER(CONCAT(title, " ", REGEXP_REPLACE(body, r"<[^>]*>", ""))) AS title, REPLACE(tags, "|", ",") AS tags FROM bigquery-public-data.stackoverflow.posts_questions WHERE REGEXP_CONTAINS(tags, r"(?:tensorflow|keras|matplotlib|pandas)")
+        
