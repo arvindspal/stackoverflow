@@ -1,0 +1,8 @@
+%%capture
+
+!gsutil cp 'model_name.h5' gs://stackoverflow_model/
+!gsutil cp 'processor_name.pkl' gs://stackoverflow_model/
+
+python setup.py sdist
+
+!gsutil cp ./dist/stackoverflow_predict-1.0.tar.gz gs://stackoverflow_model/packages/stackoverflow_predict-1.0.tar.gz
